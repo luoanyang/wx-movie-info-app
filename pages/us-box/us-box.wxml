@@ -1,0 +1,15 @@
+<view class='container list-container'>
+  <view class='list-box' wx:for='{{listData}}' wx:key="{{item.subject.id}}" data-id="{{item.subject.id}}" bindtap='toDetail'>
+    <image class='avatar-img' mode='aspectFill' src='{{item.subject.images.large}}'></image>
+    <view class='text-box'>
+      <view class='title'>{{item.subject.title}}</view>
+      <view class='subtitle'>{{item.subject.original_title}}({{item.subject.year}})</view>
+      <view class='subtitle'>主演:
+        <block wx:for="{{item.subject.casts}}" wx:for-item="cast" wx:key="{{cast.id}}">
+          {{cast.name}}
+        </block>
+      </view>
+      <view class='rating {{item.subject.rating.average>=7.5?"hot":""}}'>评分: {{item.subject.rating.average}}</view>
+    </view>
+  </view>
+</view>

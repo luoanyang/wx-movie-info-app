@@ -1,0 +1,15 @@
+<view class='container list-container'>
+  <view class='prompt' hidden='{{!promptFlag}}'>
+    <image src='/images/not-icon.png'></image>
+    <text>目前还没有看完的的电影哦</text>
+  </view>
+  <view class='list-box' wx:for='{{listData}}' wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='toDetail' hidden='{{!promptFlag}}'>
+    <image class='avatar-img' mode='aspectFill' src='{{item.avatar}}'></image>
+    <view class='text-box'>
+      <view class='title'>{{item.title}}</view>
+      <view class='subtitle'>标签: {{item.tags}}</view>
+      <view class='subtitle'>主演: {{item.casts}}</view>
+      <view class='rating {{item.average>=7.5?"hot":""}}'>评分: {{item.average}}</view>
+    </view>
+  </view>
+</view>

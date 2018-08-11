@@ -1,0 +1,72 @@
+<view id='bg'>
+  <view class='white-block'></view>
+</view>
+<view class=' index-container' hidden='{{loading}}'>
+  <view class="recommend-title">电影推荐</view>
+  <swiper class='head-wrap' style='height:{{swiperHeight}}px' next-margin='50px' bindchange='swiperChange'>
+    <swiper-item wx:for="{{recommendMovie}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap='toDetail'>
+      <view class='head-list-box width-90'>
+        <view class="left">
+          <view class='big-title'><text class='name'>{{item.title}}</text><text class='original-name'>{{item.original_title}}</text>
+          </view>
+          <view class='title'>评分:
+            <text>{{item.rating.average}}</text>
+          </view>
+          <view class='title'>标签:
+            <view>{{item.genres}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <image class="avatar-img" mode="aspectFill" src="{{item.images.large}}"></image>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class='swiper-dots-wrap'>
+    <view wx:for="{{recommendMovie}}" wx:key="{{item.id}}" class='dot-box {{currentDotIndex===index?"on":""}}'></view>
+  </view>
+  <view class='select-wrap clear-float'>
+    <view class='select-box' style='height:{{selectBoxHeight}}px;margin-top:{{selectBoxMT}}px' bindtap="toOnNow">
+      <image mode='widthFix' src='/images/index-on-icon.png'></image>
+      <view class='content-text'>
+        正在上映
+        <text>正在上映的电影</text>
+      </view>
+    </view>
+    <view class='select-box' style='height:{{selectBoxHeight}}px;margin-top:{{selectBoxMT}}px' bindtap="toComingSoon">
+      <image mode='widthFix' src='/images/index-coming-icon.png'></image>
+      <view class='content-text'>
+        即将上映
+        <text>即将上映的电影</text>
+      </view>
+    </view>
+    <view class='select-box' style='height:{{selectBoxHeight}}px;margin-top:{{selectBoxMT}}px' bindtap='toUsBox'>
+      <image mode='widthFix' src='/images/index-us-icon.png'></image>
+      <view class='content-text'>
+        北美票房榜
+        <text>北美最火的电影</text>
+      </view>
+    </view>
+    <view class='select-box' style='height:{{selectBoxHeight}}px;margin-top:{{selectBoxMT}}px' bindtap="toTop250">
+      <image mode='widthFix' src='/images/index-top-250-icon.png'></image>
+      <view class='content-text'>
+        TOP250
+        <text>评分最高的250部电影</text>
+      </view>
+    </view>
+    <view class='select-box' style='height:{{selectBoxHeight}}px;margin-top:{{selectBoxMT}}px' bindtap="toCollection">
+      <image mode='widthFix' src='/images/index-collect-icon.png'></image>
+      <view class='content-text'>
+        收藏的电影
+        <text>把想看的电影收藏哦</text>
+      </view>
+    </view>
+    <view class='select-box' style='height:{{selectBoxHeight}}px;margin-top:{{selectBoxMT}}px' bindtap="toAlreadySeen">
+      <image mode='widthFix' src='/images/index-look-icon.png'></image>
+      <view class='content-text'>
+        已看的电影
+        <text>收藏中已看完的电影</text>
+      </view>
+    </view>
+  </view>
+</view>

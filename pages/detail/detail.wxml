@@ -1,0 +1,40 @@
+<view class='container detail-container' hidden='{{!loading}}'>
+  <view class='head-wrap'>
+    <image class='avatar' src='{{detailData.avatar}}' bindtap='toggleBigAvatar' mode='aspectFill'></image>
+    <view class='head-box'>
+      <view class='collection-box' bindtap='collectionMovie'>
+        <image hidden='{{collectionFlag}}' src='/images/collection-icon.png' mode='widthFix'></image>
+        <image hidden='{{!collectionFlag}}' src='/images/collection-on-icon.png' mode='widthFix'></image>
+      </view>
+      <view class='title'>{{detailData.title}}</view>
+      <view class='subtitle'>评分: {{detailData.average}}</view>
+      <view class='subtitle'>标签: {{detailData.tags}}</view>
+      <view class='directors'>导演: {{detailData.directors}}</view>
+      <view class='casts'>演员: {{detailData.casts}}</view>
+    </view>
+  </view>
+  <view class='content-wrap'>
+    <view class='title'>剧情简介</view>
+    <text>{{detailData.summary}}</text>
+  </view>
+</view>
+<view class='right-bottom-box'>
+  <view bindtap='alreadySeen' class='already-seen' hidden='{{!collectionFlag}}'>
+    <image hidden="{{alreadySeenFlag}}" src='/images/already-seen-icon.png' mode='widthFix'></image>
+    <image hidden="{{!alreadySeenFlag}}" src='/images/already-seen-on-icon.png' mode='widthFix'></image>
+  </view>
+  <view class='copy-url' hidden="{{!detailData.url}}" bindtap='copyMovieUrl'>
+    <image src='/images/url-icon.png' mode='widthFix'></image>
+  </view>
+  <view class='share-btn'>
+    <button plain="{{true}}" open-type="share">
+      <image src='/images/share-icon.png' mode='widthFix'></image>
+    </button>
+  </view>
+  <view bindtap='backIndex' class='back-index'>
+    <image src='/images/home-icon.png' mode='widthFix'></image>
+  </view>
+</view>
+<view hidden='{{!bigAvatarFlag}}' class='big-avatar-box' bindtap='toggleBigAvatar'>
+  <image mode='widthFix' src='{{detailData.avatar}}'></image>
+</view>

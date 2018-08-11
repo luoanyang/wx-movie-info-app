@@ -1,0 +1,161 @@
+.detail-container .head-wrap {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  background: #478afb;
+  height: 262px;
+  box-shadow: 0 2px 6px #ddd;
+}
+
+.detail-container .head-wrap .avatar {
+  width: 150px;
+  height: 222.22px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+}
+
+.detail-container .head-wrap .head-box {
+  width: calc(100% - 150px);
+  padding: 6px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+}
+
+.detail-container .head-wrap .head-box .collection-box {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+}
+
+.detail-container .head-wrap .head-box .collection-box image {
+  width: 20px;
+  height: 20px;
+}
+
+.detail-container .head-wrap .head-box .title {
+  font-size: 18px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.detail-container .head-wrap .head-box .subtitle {
+  font-size: 14px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+.detail-container .head-wrap .head-box .directors {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.detail-container .head-wrap .head-box .casts {
+  font-size: 14px;
+  color: #fff;
+}
+
+.detail-container .content-wrap {
+  padding: 20px 16px 30px;
+}
+
+.detail-container .content-wrap .title {
+  font-size: 16px;
+}
+
+.detail-container .content-wrap text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+.right-bottom-box {
+  position: fixed;
+  z-index: 9;
+  bottom: 3%;
+  right: 5%;
+  width: 40px;
+}
+
+.right-bottom-box>view {
+  background: #478afb;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  box-shadow: 0 1px 12px #ddd;
+  margin-top: 8px;
+}
+
+.back-index image {
+  width: 22px;
+  height: 22px;
+  margin: 7px 8.5px;
+}
+
+.already-seen image {
+  width: 40px;
+  height: 40px;
+}
+
+.copy-url image {
+  width: 100%;
+}
+
+.share-btn button {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background: #478afb;
+  border: none;
+}
+
+.share-btn button::after {
+  display: none;
+}
+
+.share-btn {
+  position: relative;
+}
+
+.share-btn image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+}
+
+.big-avatar-box {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+}
+
+.big-avatar-box image {
+  width: 60%;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  background: #fff;
+}

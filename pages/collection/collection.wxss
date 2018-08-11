@@ -1,0 +1,16 @@
+.prompt {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30%;
+  color: #999;
+}
+
+.prompt image{
+  width: 30px;
+  height: 30px;
+}
+
+.prompt text{
+  display: block;
+  margin-top: 20px
+}

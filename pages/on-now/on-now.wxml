@@ -1,0 +1,18 @@
+<view class='container list-container'>
+  <scroll-view scroll-y bindscrolltolower="loadNextPage" lower-threshold="20">
+    <view class='list-box' wx:for='{{listData}}' wx:key="{{item.id}}"  data-id="{{item.id}}" bindtap='toDetail'>
+      <image class='avatar-img' mode='aspectFill' src='{{item.images.large}}'></image>
+      <view class='text-box'>
+        <view class='title'>{{item.title}}</view>
+        <view class='subtitle'>{{item.original_title}}({{item.year}})</view>
+        <view class='subtitle'>主演:
+          <block wx:for="{{item.casts}}" wx:for-item="cast" wx:key="{{cast.id}}">
+            {{cast.name}}
+          </block>
+        </view>
+        <view class='rating {{item.rating.average>=7.5?"hot":""}}'>评分: {{item.rating.average}}</view>
+      </view>
+    </view>
+    <view hidden='{{!loadOverFlag}}' class='load-over'>已全部加载咯,各位大佬...</view>
+  </scroll-view>
+</view>
